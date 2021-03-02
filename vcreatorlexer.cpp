@@ -223,7 +223,8 @@ QList<Token> Scanner::operator()(const QString &text, int startState)
                 }
                 if (_scanComments)
                     tokens.append(Token(start, index - start, Token::Comment));
-            }
+            } else
+                tokens.append(Token(index++, 1, Token::Delimiter));
             break;
 
         case '\'':
