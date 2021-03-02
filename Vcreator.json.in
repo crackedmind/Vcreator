@@ -1,0 +1,39 @@
+{
+    \"Name\" : \"V Language\",
+    \"Version\" : \"$$QTCREATOR_VERSION\",
+    \"CompatVersion\" : \"$$QTCREATOR_COMPAT_VERSION\",
+    \"Vendor\" : \"Stanislav Ershov\",
+    \"Copyright\" : \"(C) 2021 Stanislav\",
+    \"License\" : [ \"Commercial Usage\",
+                  \"\",
+                  \"Licensees holding valid Qt Commercial licenses may use this plugin in accordance with the Qt Commercial License Agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and The Qt Company.\",
+                  \"\",
+                  \"GNU General Public License Usage\",
+                  \"\",
+                  \"Alternatively, this plugin may be used under the terms of the GNU General Public License version 3 as published by the Free Software Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT included in the packaging of this plugin. Please review the following information to ensure the GNU General Public License requirements will be met: https://www.gnu.org/licenses/gpl-3.0.html.\"
+    ],
+    \"Category\" : \"Other Languages\",
+    \"Description\" : \"Plugin for supporting the V programming language.\",
+    \"Url\" : \"https://vlang.io\",
+    $$dependencyList,
+
+    \"Mimetypes\" : [
+        \"<?xml version=\'1.0\'?>\",
+        \"<mime-info xmlns=\'http://www.freedesktop.org/standards/shared-mime-info\'>\",
+        \"    <mime-type type=\'text/x-vlang-project\'>\",
+        \"        <sub-class-of type=\'text/plain\'/>\",
+        \"        <comment>V project file</comment>\",
+        \"        <glob pattern=\'v.mod\'/>\",
+        \"    </mime-type>\",
+
+        \"    <mime-type type=\'application/x-vlang\'>\",
+        \"        <sub-class-of type=\'text/plain\'/>\",
+        \"        <comment>V source file</comment>\",
+        \"        <glob pattern=\'*.v\' weight=\'70\'/>\",
+        \"        <glob pattern=\'*.vv\' weight=\'70\'/>\",
+        \"        <glob pattern=\'*.vh\' weight=\'70\'/>\",
+        \"        <glob pattern=\'*.vsh\' weight=\'70\'/>\",
+        \"    </mime-type>\",
+        \"</mime-info>\"
+    ]
+}

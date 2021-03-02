@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/v">
+        <file>images/settingscategory_v.png</file>
+        <file>images/settingscategory_v@2x.png</file>
+    </qresource>
+</RCC>
