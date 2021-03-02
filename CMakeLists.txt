@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Remove when sharing with others.
-list(APPEND CMAKE_PREFIX_PATH "C:/Qt/Tools/QtCreator")
+#list(APPEND CMAKE_PREFIX_PATH "C:/Qt/Tools/QtCreator")
 
 project(vcreator)
 
