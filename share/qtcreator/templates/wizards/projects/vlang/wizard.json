@@ -1,0 +1,110 @@
+{
+    "version": 1,
+
+    "supportedProjectTypes": [ "Vcreator.VlangProject" ],
+    "id": "Z.VlangProject",
+    "category": "I.Projects",
+    "trDescription": "Creates a simple V application.",
+    "trDisplayName": "V Application",
+    "trDisplayCategory": "Non-Qt Project",
+    "icon": "icon.png",
+    "enabled": "%{JS: value('Plugins').indexOf('V Language') >= 0 }",
+
+    "options":
+    [
+        { "key": "MainFileName", "value": "%{JS: Util.fileName(value('ProjectName'), 'v')}"},
+        { "key": "ProjectFile", "value": "%{ProjectDirectory}/v.mod"}
+    ],
+
+    "pages":
+    [
+        {
+            "trDisplayName": "Project Location",
+            "trShortTitle": "Location",
+            "typeId": "Project"
+        },
+        {
+            "trDisplayName": "Define Project Details",
+            "trShortTitle": "Details",
+            "typeId": "Fields",
+            "data":
+            [
+                {
+                    "name": "ClassPageDescription",
+                    "type": "Label",
+                    "data":
+                    {
+                        "trText": "Specify details about your V application.",
+                        "wordWrap": true
+                    }
+                },
+                {
+                    "name": "License",
+                    "trDisplayName": "License:",
+                    "type": "LineEdit",
+                    "data":
+                    {
+                        "trText": "Put short license information here"
+                    }
+                },
+                {
+                    "name": "Version",
+                    "trDisplayName": "Version:",
+                    "type": "LineEdit",
+                    "data":
+                    {
+                        "trText": "0.0.1"
+                    }
+                },
+                {
+                    "name": "Description",
+                    "trDisplayName": "Description:",
+                    "type": "LineEdit",
+                    "data":
+                    {
+                        "trText": "Put a short description"
+                    }
+                },
+                {
+                    "name": "RepoUrl",
+                    "persistenceKey": "VendorUrl",
+                    "trDisplayName": "Repository URL:",
+                    "type": "LineEdit",
+                    "data":
+                    {
+                        "trText": "https://github.com"
+                    }
+                }
+            ]
+        },
+        {
+            "trDisplayName": "Project Management",
+            "trShortTitle": "Summary",
+            "typeId": "Summary"
+        }
+    ],
+    "generators":
+    [
+        {
+            "typeId": "File",
+            "data":
+            [
+                {
+                    "source": "main.v",
+                    "target": "%{MainFileName}",
+                    "openInEditor": true
+                },
+                {
+                    "source": "v.mod",
+                    "target": "%{ProjectDirectory}/v.mod",
+                    "openAsProject": true
+                },
+                {
+                    "source": "git.ignore",
+                    "target": "%{ProjectDirectory}/.gitignore",
+                    "condition": "%{JS: !value('IsSubproject') && value('VersionControl') === 'G.Git'}"
+                }
+            ]
+        }
+    ]
+}
