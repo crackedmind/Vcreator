@@ -2,7 +2,7 @@
 
 # Vcreator 
 
-## Feautres
+## Features
 - Basic Highlighting support
 - Open project (v.mod)
 
