@@ -43,3 +43,5 @@ add_qtc_plugin(Vcreator
     vcreatorlexer.cpp
     vcreatorlexer.h
 )
+
+add_subdirectory(share/qtcreator)
