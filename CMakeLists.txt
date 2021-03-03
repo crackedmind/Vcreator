@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 # Remove when sharing with others.
 #list(APPEND CMAKE_PREFIX_PATH "C:/Qt/Tools/QtCreator")
 
-project(vcreator)
+project(Vcreator)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
