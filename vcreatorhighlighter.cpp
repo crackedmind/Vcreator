@@ -37,13 +37,13 @@ void VlangHighlighter::highlightBlock(const QString &text)
             case Token::String: {
                 QRegularExpression re(R"del((\$([\w.]+|\{.*?\})))del");
                 QString t = text.mid(token.offset, token.length);
-                auto match = re.match(t);
-                if(match.hasMatch()) {
-                    setFormat(token.offset, token.offset + match.capturedStart(1), formatForCategory(TextEditor::C_STRING));
-                    setFormat(token.offset + match.capturedStart(1), match.capturedEnd(1), formatForCategory(TextEditor::C_TYPE));
-                    setFormat(token.offset + match.capturedEnd(1), token.length - match.capturedEnd(1), formatForCategory(TextEditor::C_STRING));
-                } else {
-                    setFormat(token.offset, token.length, formatForCategory(TextEditor::C_STRING));
+                auto it = re.globalMatch(t);
+                int matches = 0;
+                setFormat(token.offset, token.length, formatForCategory(TextEditor::C_STRING));
+                while(it.hasNext()) {
+                    auto match = it.next();
+                    setFormat(token.offset + match.capturedStart(1), match.capturedEnd(1) - match.capturedStart(1), formatForCategory(TextEditor::C_TYPE));
+                    matches++;
                 }
             }
                 break;
