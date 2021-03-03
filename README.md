@@ -1,5 +1,22 @@
 # Vcreator
 
+## Feautres
+- Basic Highlighting support
+- Open project (v.mod)
+
+## Todo
+- Building support
+- Vls support
+
+## Release Compatibility
+Binary plugin compatible with official distributions of Qt Creator from qt.io
+
+## How to Install
+
+1. Download plugin from Release page
+2. Unpack archive <path_to_qtcreator>/lib/qtcreator/plugins
+    * don't forget `chmod +x libVcreator.so` on *nix
+
 ## How to Build
 
 Create a build directory and run
