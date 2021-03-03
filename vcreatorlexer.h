@@ -16,6 +16,7 @@ public:
         String,
         Comment,
         Number,
+        Hash,
         Operator,
         BuiltinType,
         BuiltinFn,

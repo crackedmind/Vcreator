@@ -295,6 +295,13 @@ QList<Token> Scanner::operator()(const QString &text, int startState)
          case ',':
             tokens.append(Token(index++, 1, Token::Comma));
             break;
+         case '#': {
+             const int start = index;
+             do {
+                 ++index;
+             } while (index < text.length() && isIdentifierChar(text.at(index)));
+             tokens.append(Token(start, index - start, Token::Hash));
+         } break;
 
         default:
             if (ch.isSpace()) {

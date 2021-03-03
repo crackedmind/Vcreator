@@ -52,6 +52,14 @@ void VlangHighlighter::highlightBlock(const QString &text)
                 setFormat(token.offset, token.length, formatForCategory(TextEditor::C_NUMBER));
                 break;
 
+            case Token::Hash: {
+                static QSet<QString> hashDecls = {"#include", "#flag", "#pkgconfig", "#define"};
+                if (hashDecls.contains(text.mid(token.offset, token.length)))
+                    setFormat(token.offset, token.length, formatForCategory(TextEditor::C_PREPROCESSOR));
+                else
+                    setFormat(token.offset, token.length, formatForCategory(TextEditor::C_TEXT));
+            } break;
+
             case Token::Comment:
                 if (m_inMultilineComment
                     && Utils::midView(text, token.end() - 2, 2) == QLatin1String("*/")) {
