@@ -1,4 +1,6 @@
-# Vcreator
+![](https://github.com/crackedmind/Vcreator/actions/workflows/build_cmake.yml/badge.svg)
+
+# Vcreator 
 
 ## Feautres
 - Basic Highlighting support
