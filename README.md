@@ -16,8 +16,8 @@ Binary plugin compatible with official distributions of Qt Creator from qt.io
 ## How to Install
 
 1. Download plugin from Release page
-2. Unpack archive <path_to_qtcreator>/lib/qtcreator/plugins
-    * don't forget `chmod +x libVcreator.so` on *nix
+2. Unpack archive to <path_to_qtcreator>
+    * don't forget `chmod +x <path_to_qtcreator>/lib/qtcreator/plugins/libVcreator.so`
 
 ## How to Build
 
