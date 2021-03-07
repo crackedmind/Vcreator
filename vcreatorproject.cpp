@@ -24,7 +24,7 @@ struct ManifestParser {
     QString name;
 
     void parse(const Utils::FilePath& manifestFile) {
-        QRegularExpression re("name: \'(\\w+)\'");
+        QRegularExpression re(R"del(name: \'(\w+)\')del");
         QFile file(manifestFile.toString());
         if (file.open(QFile::ReadOnly)) {
             QTextStream stream(&file);
