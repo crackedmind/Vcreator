@@ -1,5 +1,6 @@
 #include "vcreatorproject.h"
 #include "vcreatorconstants.h"
+#include "ide.h"
 
 #include <projectexplorer/buildsystem.h>
 #include <projectexplorer/buildtargetinfo.h>
@@ -146,7 +147,12 @@ public:
         return true;
     }
 
+// TODO: Remove after Qt Creator 5.0 release
+#if QTCREATOR_VERSION >= QTCREATOR_VERSION_CHECK(4,82,0)
+    bool renameFile(ProjectExplorer::Node *, const Utils::FilePath &, const Utils::FilePath &) override {
+#else
     bool renameFile(ProjectExplorer::Node *, const QString &, const QString &) override {
+#endif
         requestDelayedParse();
         return true;
     }
